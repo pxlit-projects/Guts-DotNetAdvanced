@@ -1,4 +1,5 @@
-# Guts-DotNetAdvanced-24-25
+# Guts-DotNetAdvanced
+
 In this repository you can find (visual studio) start solutions for the exercises of the **.NET Advanced** course of **PXL-Digital**.
 
 The exercises are grouped in parts. In each part there is one (Visual Studio) solution for each exercise.
@@ -13,20 +14,20 @@ The exercise projects are (mostly) empty and waiting for you to complete them.
 The matching test projects contain **automated tests** that can be run to check if your solution is correct.
 
 ## Parts
-The assignments for each part can be found in de README.md in the folder of the part or by clicking on one of the links below:
-* [Part 1 - C# Language features](1_LanguageFeatures/README.md)
-* [Part 2 - ASP.NET Core MVC & Entity Framework & NUnit](2_MVC_EF_NUnit/README.md)
-* [Part 3 - ASP.NET Rest API & Razor pages](3_API-RazorPages/README.md)
+The start solutions of the lab assignments with GUTS support can be found in these folders:
+* _1_LanguageFeatures_ - C# Language features
+* _2_MVC_EF_NUnit_- ASP.NET Core MVC & Entity Framework & NUnit
+* _3_API_ - ASP.NET Rest API
 
 ## Getting Started
 
 ### Accept the GitHub Classroom assignment
-We will work with GitHub Classroom for the Guts PE.
+We will work with GitHub Classroom for the Guts exercises.
 The idea is that you make an online fork of the repository containing the startcode of the exercises. Only you (and the lectors) will have access to this online copy.
 
 To proceed you need a GitHub account. If you don't have one yet, register youself via https://github.com. 
 
-Now go to **https://classroom.github.com/a/BEhmlUGp**
+Now go to **https://classroom.github.com/a/R_EBaiWe**
 
 Accept the assignment and GitHub will make that online fork of the repository containing the startcode. 
 GitHub Classroom will show you the url of your repository. Navigate to this url and mark it as a favorite in your browser.

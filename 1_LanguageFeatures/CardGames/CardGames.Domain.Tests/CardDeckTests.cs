@@ -8,7 +8,7 @@ using Guts.Client.Core;
 
 namespace CardGames.Domain.Tests;
 
-[ExerciseTestFixture("dotNet2", "1-LanguageFeatures", "CardGames", 
+[ExerciseTestFixture("dotNet2", "1-LanguageFeatures", "CardGames",
     @"CardGames.Domain\CardDeck.cs;CardGames.Domain\ICardDeck.cs")]
 public class CardDeckTests
 {
