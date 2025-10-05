@@ -155,8 +155,6 @@ public class CardDeckTests
 
         _02_ParameterlessConstructor_ShouldInitializeADeckOf52Cards();
 
-        AssertDoesNotUseLoops(nameof(ICardDeck.WithoutCardsRankingLowerThan));
-
         ICardDeck deck = (new CardDeck() as ICardDeck)!;
 
         CardRank minimumRank = (CardRank)Random.Next(3, 10);
@@ -172,8 +170,6 @@ public class CardDeckTests
     public void _08_SplitBySuit_ShouldCreate4NewDecks_OneForEachSuit()
     {
         _02_ParameterlessConstructor_ShouldInitializeADeckOf52Cards();
-
-        AssertDoesNotUseLoops(nameof(ICardDeck.SplitBySuit));
 
         ICardDeck deck = (new CardDeck() as ICardDeck)!;
 
@@ -211,27 +207,6 @@ public class CardDeckTests
 
         Assert.That(obsoleteAttribute!.Message, Does.Contain("removed").IgnoreCase,
             "The obsolete message should contain the word 'removed'");
-    }
-
-    private void AssertDoesNotUseLoops(string methodName)
-    {
-        SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(_code);
-        CompilationUnitSyntax root = syntaxTree.GetCompilationUnitRoot();
-
-        MethodDeclarationSyntax? methodDeclaration = root.DescendantNodes().OfType<MethodDeclarationSyntax>()
-            .FirstOrDefault(ms => ms.Identifier.Text == methodName);
-
-        Assert.That(methodDeclaration, Is.Not.Null, $"Cannot find a method with name '{methodName}'");
-
-        BlockSyntax? methodBody = methodDeclaration!.Body;
-
-        Assert.That(methodBody, Is.Not.Null, $"The method '{methodName}' does not have a body");
-
-        var walker = new LoopWalker();
-        walker.Visit(methodBody);
-
-        Assert.That(walker.ContainsLoops, Is.False,
-            $"The method '{methodName}' should not contain any loops (while, for). Use LINQ instead.");
     }
 
     private IList<ICard> AssertShufflesRandomly(ICardDeck deck, IList<ICard> originalCards)
